@@ -48,6 +48,7 @@ public class Huffman {
      * @date 2021/4/8
      */
     public void createTree(String str) {
+        str = str.replaceAll(";","").replaceAll(":","").replaceAll("\r","").replaceAll("\n","");
         frequencyTable = getFrequencyTable(str);
         createHuffmanTree(frequencyTable);
         codeTable = new HashMap<>();
@@ -227,6 +228,9 @@ public class Huffman {
         Queue<Node<Character>> queue = new PriorityQueue<>(new Comparator<Node<Character>>() {
             @Override
             public int compare(Node<Character> o1, Node<Character> o2) {
+                if (o1.weight == o2.weight) {
+                    return o1.getMessage() > o2.getMessage() ? 1 : -1;
+                }
                 return o1.weight > o2.weight ? 1 : -1;
             }
         });
@@ -237,7 +241,7 @@ public class Huffman {
         while (queue.size() > 1) {
             Node<Character> n1 = queue.poll();
             Node<Character> n2 = queue.poll();
-            Node<Character> f = new Node<>();
+            Node<Character> f = new Node<>('\0');
             f.weight = n1.weight + n2.weight;
             f.left = n1;
             f.right = n2;

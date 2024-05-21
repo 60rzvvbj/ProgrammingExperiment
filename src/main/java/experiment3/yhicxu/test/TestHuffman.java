@@ -22,11 +22,11 @@ public class TestHuffman {
         h.showCodeTable();
         System.out.println("\n请输入要编码的字符串：");
         String text = new BufferedReader(new InputStreamReader(System.in)).readLine();
-        String code = h.encode(text);
-        System.out.println("\n编码后：");
-        System.out.println(code);
+//        String code = h.encode(text);
+//        System.out.println("\n编码后：");
+//        System.out.println(code);
         System.out.println("\n解码后：");
-        System.out.println(h.decode(code));
+        System.out.println(h.decode(text));
 
         // 显示树相关
         /*

@@ -24,12 +24,12 @@ public class Main {
         printStream.println("8. 删除线路");
         printStream.println("9. 浏览所有线路");
         printStream.println("10. 线路查询");
-        printStream.println("11. 保存");
-        printStream.println("12. 导入");
-        printStream.println("13. 退出");
+        printStream.println("11. 退出");
+//        printStream.println("12. 导入");
+//        printStream.println("13. 退出");
         printStream.println("==================");
         printStream.println();
-        printStream.println("请选择操作类型(1~13)：");
+        printStream.println("请选择操作类型(1~11)：");
     }
 
     public static void main(String[] args) {
